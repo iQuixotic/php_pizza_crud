@@ -1,0 +1,21 @@
+html {
+    font-size: 10px;
+}
+
+h5 {
+    font-size: 1.6rem;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
+
+.container {
+    margin: 0 15%;
+}
+
+.block {
+    margin: 8px 0;
+    display: block;
+}

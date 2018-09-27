@@ -1,0 +1,24 @@
+.Toppings {
+    border: 1px solid black;
+    /* width: 70%; */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Toppings_checkbox {
+    width: 15px;
+    height: 15px;
+}
+
+.Toppings_single {
+    text-align: center;
+    width: 150px;
+}
+
+.Toppings_checkbox-txt {
+    font-size: 1.4rem;
+}
+
+.form-header {
+    font-size: 1.6rem;
+}
