@@ -1,13 +1,12 @@
-.Toppings {
+#Toppings {
     border: 1px solid black;
-    /* width: 70%; */
     display: flex;
     flex-wrap: wrap;
 }
 
 .Toppings_checkbox {
-    width: 15px;
-    height: 15px;
+    width: 11px;
+    height: 11px;
 }
 
 .Toppings_single {
