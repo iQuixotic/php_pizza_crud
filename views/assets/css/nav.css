@@ -1,0 +1,20 @@
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    background-color: red;
+}
+
+.my-head-space {
+    margin-top: 120px;
+}
+
+.nav_links {
+    position: absolute;
+    top: 50px;
+    right: 5%;
+    font-size: 2rem;
+
+}

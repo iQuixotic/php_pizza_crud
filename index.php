@@ -1,45 +1,33 @@
-<!DOCTYPE >
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <title>Jimmy Johns</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="views/assets/css/base.css" />    -->
+    <link rel="stylesheet" href="views/assets/css/base.css" <?php  echo time(); ?> />   
+    <link rel="stylesheet" href="views/assets/css/layout.css"  <?php  echo time(); ?> />   
+    <link rel="stylesheet" href="views/assets/css/nav.css"  <?php  echo time(); ?> />   
+
+
 </head>
 <body>
-    <!-- hey
-    <h1>PHP Suuuuoooonnnnn</h1>
-    <table>
-        <tr>
-            <th>Pizza Name</th>
-            <th>Customer</th>
-            <th>Toppings</th>
-            <th>Price</th>
-        </tr>
-        <tr>
-            Stacy
-        </tr>
-    </table> -->
-    
-    <?php
 
-    echo "hello";
+<nav>
+    <div class="logo"></div>
+    <h1>Pizza Time !</h1>
+    <div class="nav_links">
+        <a href="/projects/php_pizza_crud">Home</a>
+        <a href="/projects/php_pizza_crud/orderForm.php">Customize</a>
+    </div>
+</nav>
 
-    $Connection=mysql_connect('localhost', 'root', '');
-    if($Connection) {
-        echo 'Database working goodly !!';
-        echo "<br>";
-    } else {
-        echo 'It\'s completely broked-ded';
-    }
-    $Selected=mysql_select_db('pizzahouse', $Connection);
-    if($Selected) {
-        echo 'Oh yes, OOOHHOHHH yes, It soo goodS !!';
-    } else {
-        echo 'At leasst the ohter workses-ses !@!@!?!';
-    }
-        
-    ?>
+<div class="my-head-space"></div>
+
+    <div class="container">
+   
+    </div>
+
 </body>
 </html>
