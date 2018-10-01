@@ -224,7 +224,9 @@
             </div>
         </div>
     
-        <input type="Submit" value="Result" name="Submit"> 
+        <div class="center">
+            <input class="submit-btn" type="Submit" value="Result" name="Submit"> 
+        </div>
 
     </div>
     

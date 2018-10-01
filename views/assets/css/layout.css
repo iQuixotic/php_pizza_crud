@@ -24,3 +24,9 @@
 .form-header {
     font-size: 1.6rem;
 }
+
+.submit-btn {
+    margin: 100px;
+    text-align: center;
+    background-color: blueviolet;
+}
