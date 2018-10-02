@@ -4,10 +4,7 @@ nav {
     left: 0;
     height: 100px;
     width: 100%;
-    background-image: url('../img/pizza.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% 350%;
-    /* background-color: red; */
+    background-color: orange;
 }
 
 .my-head-space {

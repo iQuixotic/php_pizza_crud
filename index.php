@@ -6,6 +6,7 @@
     <title>Jimmy Johns</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="views/assets/css/base.css" />    -->
+    <link rel="stylesheet" href="views/assets/css/main.css" <?php  echo time(); ?> />   
     <link rel="stylesheet" href="views/assets/css/base.css" <?php  echo time(); ?> />   
     <link rel="stylesheet" href="views/assets/css/layout.css"  <?php  echo time(); ?> />   
     <link rel="stylesheet" href="views/assets/css/nav.css"  <?php  echo time(); ?> />   
@@ -22,6 +23,15 @@
         <a href="/projects/php_pizza_crud/orderForm.php">Customize</a>
     </div>
 </nav>
+
+
+<div class="my-head-space"></div>
+
+<div class="pretty-pizza">
+    <img src="./views/assets/img/pizzat.jpg" alt="">
+    <div class="choice-form">hey</div>
+
+</div>
 
 <div class="my-head-space"></div>
 

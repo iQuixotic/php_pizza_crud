@@ -105,7 +105,7 @@
     <div id="toppings">
         <div class="toppings_single">
             <h5>Mushroom</h5>
-            <img src="./views/assets/img/mushroom.jpg" alt="">
+            <img class="toppings_img" src="./views/assets/img/mushroom.jpg" alt="">
             <div class="block">                
                 <input class ='toppings_checkbox' type="radio" value="NA" name="mushroom" checked> 
                 <span class="toppings_checkbox-txt">NOPE</span>
@@ -115,7 +115,7 @@
         </div>
         <div class="toppings_single">
             <h5>Pepperoni</h5>
-            <img src="./views/assets/img/peps.jpg" alt="">
+            <img class="toppings_img" src="./views/assets/img/peps.jpg" alt="">
             <div class="block">                
                 <input class ='toppings_checkbox' type="radio"  value="NA" name="peps" checked> 
                 <span class="toppings_checkbox-txt">NOPE</span>
@@ -125,7 +125,7 @@
         </div>
         <div class="toppings_single">
             <h5>Bell Pepper (Green)</h5>
-            <img src="./views/assets/img/greenPepper.jpg" alt="">
+            <img class="toppings_img" src="./views/assets/img/greenPepper.jpg" alt="">
             <div class="block">                
                 <input class ='toppings_checkbox' type="radio"  value="NA" name="green_pepper" checked> 
                 <span class="toppings_checkbox-txt">NOPE</span>
@@ -135,7 +135,7 @@
         </div>
         <div class="toppings_single">
             <h5>Bell Pepper (Red)</h5>
-            <img src="./views/assets/img/redPepper.jpg" alt="">
+            <img class="toppings_img" src="./views/assets/img/redPepper.jpg" alt="">
             <div class="block">                
                 <input class ='toppings_checkbox' type="radio" value="NA" name="red_pepper" checked> 
                 <span class="toppings_checkbox-txt">NOPE</span>
@@ -145,7 +145,7 @@
         </div>
         <div class="toppings_single">
             <h5>Ham</h5>
-            <img src="./views/assets/img/ham.jpg" alt="">
+            <img class="toppings_img" src="./views/assets/img/ham.jpg" alt="">
             <div class="block">                
                 <input class ='toppings_checkbox' type="radio" value="NA" name="ham" value="NA" checked> 
                 <span class="toppings_checkbox-txt">NOPE</span>
@@ -155,7 +155,7 @@
         </div>
         <div class="toppings_single">
             <h5>Mozzarella</h5>
-            <img src="./views/assets/img/mozz.jpg" alt="">
+            <img class="toppings_img" src="./views/assets/img/mozz.jpg" alt="">
             <div class="block">                
                 <input class ='toppings_checkbox' type="radio" value="NA" name="mozzarella" checked> 
                 <span class="toppings_checkbox-txt">NOPE</span>
@@ -165,7 +165,7 @@
         </div>
         <div class="toppings_single">
             <h5>Olive</h5>
-            <img src="./views/assets/img/olive.png" alt="">
+            <img class="toppings_img" src="./views/assets/img/olive.png" alt="">
             <div class="block">                
                 <input class ='toppings_checkbox' type="radio" value="NA" name="olive" checked> 
                 <span class="toppings_checkbox-txt">NOPE</span>
@@ -175,7 +175,7 @@
         </div>
         <div class="toppings_single">
             <h5>Onion</h5>
-            <img src="./views/assets/img/onion.jpg" alt="">
+            <img class="toppings_img" src="./views/assets/img/onion.jpg" alt="">
             <div class="block">                
                 <input class ='toppings_checkbox' type="radio"  value="NA" name="onion" checked> 
                 <span class="toppings_checkbox-txt">NOPE</span>
@@ -185,7 +185,7 @@
         </div>
         <div class="toppings_single">
             <h5>Pineapple</h5>
-            <img src="./views/assets/img/pineapple.jpg" alt="">
+            <img class="toppings_img" src="./views/assets/img/pineapple.jpg" alt="">
             <div class="block">                
                 <input class ='toppings_checkbox' type="radio" value="NA" name="pineapple" checked> 
                 <span class="toppings_checkbox-txt">NOPE</span>
@@ -195,7 +195,7 @@
         </div>
         <div class="toppings_single">
             <h5>Provolone</h5>
-            <img src="./views/assets/img/provolone.png" alt="">
+            <img class="toppings_img" src="./views/assets/img/provolone.png" alt="">
             <div class="block">                
                 <input class ='toppings_checkbox' type="radio" value="NA" name="provolone" checked> 
                 <span class="toppings_checkbox-txt">NOPE</span>
@@ -205,7 +205,7 @@
         </div>
         <div class="toppings_single">
             <h5>Spinach</h5>
-            <img src="./views/assets/img/spinach.jpg" alt="">
+            <img class="toppings_img" src="./views/assets/img/spinach.jpg" alt="">
             <div class="block">                
                 <input class ='toppings_checkbox' type="radio" value="NA"  name="spinach" checked> 
                 <span class="toppings_checkbox-txt">NOPE</span>
@@ -215,7 +215,7 @@
         </div>
         <div class="toppings_single">
             <h5>Tomato</h5>
-            <img src="./views/assets/img/tomato.jpg" alt="">
+            <img class="toppings_img" src="./views/assets/img/tomato.jpg" alt="">
             <div class="block">                
                 <input class ='toppings_checkbox' type="radio" value="NA" name="tomato" checked> 
                 <span class="toppings_checkbox-txt">NOPE</span>
