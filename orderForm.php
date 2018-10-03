@@ -24,9 +24,6 @@
             }
         $SM_val=4.00;
         switch ($size) {
-            // case 'SM':
-            //     priceAdjust($);            
-            //     break;
             case 'MED':
                 priceAdjust(2.09);
                 break;

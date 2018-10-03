@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,3 +43,20 @@
 
 </body>
 </html>
+
+<?php
+$Connection=mysql_connect('localhost', 'root', '');
+$Selected=mysql_select_db('pizzahouse', $Connection);
+
+$sqlGet = "SELECT * FROM menu";
+$sqlData = mysql_query($sqlGet);
+
+echo "<table>";
+echo "<tr><th>ORDER NUMBER</th> <th>CUSTOMER</th><th>PIZZA NAME</th> <th>TOPPINGS</th><th>PRICE</th></tr>";
+while($row = mysql_fetch_assoc($sqlData)) {
+    echo "<tr><td>" . $row["id"] . "</td><td>" . $row["customer"] . "</td><td>" . 
+    $row["pizza_name"] . "</td><td>" . $row["toppings"] . "</td><td>" . $row["price"] . 
+    "</td></tr>";
+}
+echo "</table>";
+?>
