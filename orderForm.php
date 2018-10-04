@@ -49,7 +49,7 @@
 
         $Connection=mysql_connect('localhost', 'root', '');
         $Selected=mysql_select_db('pizzahouse', $Connection);
-        $Query="INSERT INTO menu(pizza_name, customer, size, toppings, price) 
+        $Query="INSERT INTO orders(pizza_name, customer, size, toppings, price) 
         VALUES('$pizzaName',  '$customer', '$size', '$toppings', '$price')";
         $Execute=mysql_query($Query);
         echo $pizzaName .  $customer . $size . $toppings . $price;
