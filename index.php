@@ -41,35 +41,54 @@
        $sqlGet = "SELECT * FROM menu";
        $sqlData = mysql_query($sqlGet);
        $radio_btn = "<input class='selection' type='radio'>";
+
+       $submit_btn = '<input class="submit-btn" type="Submit" value="Result" name="Submit">';
+       $selected='';
+       function get_options($selected) {
+        $sizes=array('SM'=>1, 'MED'=>2, 'LG'=>3, 'XL'=>4);
+        $options='';
+        while(list($k,$v)=each($sizes)) {
+            if($selected==$v) {
+                $options.='<option value="' . $v . '" selected>' . $k .'</option>';
+            } else {
+                $options.='<option value="' . $v . '">' . $k .'</option>';
+                
+            }
+        }
+        return $options;
+        }
+        
       
+        // $these_options=get_options($selected);
 
         // echo $selectionMult;
         
         // $value_prices = 4 * $selectionMult;
        
        echo "<table class='all_current_orders'>";
-       echo "<tr><th></th><th>PIZZA</th><th>TOPPINGS</th> <th>SIZE</th><th>PRICE</th></tr>";
+       echo "<tr><th></th><th>PIZZA</th><th>TOPPINGS</th> </tr>";
        while($row = mysql_fetch_assoc($sqlData)) {
-        $sizeDropdown = "<select name='size'>
-        <option value='SM'>
-            SM
-        </option>
-        <option value='MED'>
-            MED
-        </option>
-        <option value='LG'>
-            LG
-        </option>
-        <option value='XL'>
-            XL
-        </option>
-        </select>" ;
-        $selectionMult = $_POST["size"];
-        echo $selectionMult;
-           echo "<tr><td>" . $radio_btn . "</td><td>" . $row["pizza_name"] . "</td><td>" . $row["toppings"] . "</td><td>" . 
-           $sizeDropdown . "</td><td>" . $selectionMult ."</td></tr>";
+        $sizeDropdown = "<form action='' method='POST'>
+        <select name='sizes'>
+        ". get_options($selected) . "
+        </select>
+       $submit_btn 
+        </form>" ;
+        
+        if (isset( $_POST["sizes"])) {
+            echo $_POST["sizes"];
+            // echo $selectionMult;
+        }
+        else echo 'hello';
+        // else $selectionMult = 'h';
+
+        // echo $selectionMult;
+           echo "<tr><td>" . $radio_btn . "</td><td>" . $row["pizza_name"] . "</td><td>" . $row["toppings"]
+           . "</td></tr>";
        }
        echo "</table>";
+
+       echo $sizeDropdown;
         
         ?>
     </div>
@@ -100,6 +119,6 @@ while($row = mysql_fetch_assoc($sqlData)) {
     $row["pizza_name"] . "</td><td>" . $row["toppings"] . "</td><td>" . $row["price"] . 
     "</td></tr>";
 }
-echo "<button>Hello Puppet!!!!</button>";
+// echo "<button>Hello Puppet!!!!</button>";
 echo "</table>";
 ?>
