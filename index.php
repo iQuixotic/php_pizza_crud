@@ -31,7 +31,14 @@
 <div class="my-head-space"></div>
 
 <div class="pretty-pizza">
-    <img src="./views/assets/img/pizzat.jpg" alt="">
+    <?php  
+            if (isset( $_POST["pizza_name"])) {
+            echo "<br>";
+            $src= $_POST["pizza_name"];
+            get_image($src);
+            echo "<br>";
+        } 
+    ?>
     <div class="choice-form">
         <?php 
 
@@ -40,51 +47,72 @@
        
        $sqlGet = "SELECT * FROM menu";
        $sqlData = mysql_query($sqlGet);
-       $radio_btn = "<input class='selection' type='radio'>";
 
+       $price=3.5;
+       $pizza_img = array('views/assets/img/hawPizza.jpg', 
+       'views/assets/img/pepperoniPizza.jpg' );
        $submit_btn = '<input class="submit-btn" type="Submit" value="Result" name="Submit">';
        $selected='';
+       $radio_select='';
+       $j=0;
+
+       function check_pizza_name($j) {
+        echo $j;
+       if ($_POST["pizza_name"] == $j) {
+        echo "checked=checked";
+        return " checked=checked ";
+       }
+       }
+
+
+       function radio_btn_mkr() {
+           global $pizza_img;           
+           global $j;
+                $radio_btn = " <input  onclick='form.submit()' name='pizza_name'               
+                value=". $pizza_img[$j] . check_pizza_name($pizza_img[$j])  . "
+                class='selection' type='radio'>";
+            $j++;
+            echo $j;
+
+            return $radio_btn;
+       }
+
+      
+
+       function get_image($src) {
+            echo "<img src='./$src'>";
+       }
+
        function get_options($selected) {
         $sizes=array('SM'=>1, 'MED'=>2, 'LG'=>3, 'XL'=>4);
         $options='';
         while(list($k,$v)=each($sizes)) {
             if($selected==$v) {
-                $options.='<option value="' . $v . '" selected>' . $k .'</option>';
+                $options .= '<option value="' . $v . '" selected>' . $k .'</option>';
             } else {
-                $options.='<option value="' . $v . '">' . $k .'</option>';
-                
+                $options.='<option value="' . $v . '">' . $k .'</option>';                
             }
         }
         return $options;
         }
-        
-      
-        // $these_options=get_options($selected);
+        if (isset( $_POST["sizes"])) {
+            echo $_POST["sizes"];
+            echo $price+$_POST["sizes"];
+        }
 
-        // echo $selectionMult;
-        
-        // $value_prices = 4 * $selectionMult;
-       
-       echo "<table class='all_current_orders'>";
-       echo "<tr><th></th><th>PIZZA</th><th>TOPPINGS</th> </tr>";
-       while($row = mysql_fetch_assoc($sqlData)) {
-        $sizeDropdown = "<form action='' method='POST'>
+         $sizeDropdown = "<form action='' method='POST'>
         <select name='sizes'>
         ". get_options($selected) . "
         </select>
        $submit_btn 
         </form>" ;
-        
-        if (isset( $_POST["sizes"])) {
-            echo $_POST["sizes"];
-            // echo $selectionMult;
-        }
-        else echo 'hello';
-        // else $selectionMult = 'h';
-
-        // echo $selectionMult;
-           echo "<tr><td>" . $radio_btn . "</td><td>" . $row["pizza_name"] . "</td><td>" . $row["toppings"]
-           . "</td></tr>";
+       
+       echo "<table class='all_current_orders'>";
+       echo "<tr><th></th><th>PIZZA</th><th>TOPPINGS</th> </tr>";
+       while($row = mysql_fetch_assoc($sqlData)) {
+       
+           echo "<form action='' method='POST'><tr><td>" . radio_btn_mkr() . "</td><td>" . $row["pizza_name"] . "</td><td>" . $row["toppings"]
+           . "</td></tr></form>";
        }
        echo "</table>";
 
@@ -119,6 +147,5 @@ while($row = mysql_fetch_assoc($sqlData)) {
     $row["pizza_name"] . "</td><td>" . $row["toppings"] . "</td><td>" . $row["price"] . 
     "</td></tr>";
 }
-// echo "<button>Hello Puppet!!!!</button>";
 echo "</table>";
 ?>
