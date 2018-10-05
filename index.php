@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Jimmy Johns</title>
+    <title>Pipi's Pizzeria</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="views/assets/css/base.css" />    -->
     <link rel="stylesheet" href="views/assets/css/main.css" <?php  echo time(); ?> />   
@@ -20,7 +20,7 @@
 
 <nav>
     <div class="logo"></div>
-    <h1>Pizza Time !</h1>
+    <h1>PiPi's Cheeky Pizzeria</h1>
     <div class="nav_links">
         <a href="/projects/php_pizza_crud">Home</a>
         <a href="/projects/php_pizza_crud/orderForm.php">Customize</a>
@@ -37,7 +37,9 @@
             $src= $_POST["pizza_name"];
             get_image($src);
             echo "<br>";
-        } 
+        }  else {
+            get_image('views/assets/img/pepperoniPizza.jpg');
+        }
     ?>
     <div class="choice-form">
         <?php 
@@ -49,19 +51,22 @@
        $sqlData = mysql_query($sqlGet);
 
        $price=3.5;
-       $pizza_img = array('views/assets/img/hawPizza.jpg', 
-       'views/assets/img/pepperoniPizza.jpg' );
+       $pizza_img = array('views/assets/img/pepperoniPizza.jpg', 
+       'views/assets/img/hawPizza.jpg', 'views/assets/img/supremePizza.jpg',
+       'views/assets/img/pizzat.jpg', 'views/assets/img/mushroomPizza.jpg'  
+        );
        $submit_btn = '<input class="submit-btn" type="Submit" value="Result" name="Submit">';
        $selected='';
        $radio_select='';
        $j=0;
 
        function check_pizza_name($j) {
-        echo $j;
-       if ($_POST["pizza_name"] == $j) {
-        echo "checked=checked";
+        // echo $j;
+    //    echo $_SERVER['pizza_name'] == 'POST';
+
+       if (isset($_POST["pizza_name"]) && $_POST["pizza_name"] == $j) {
         return " checked=checked ";
-       }
+       } 
        }
 
 
@@ -72,7 +77,7 @@
                 value=". $pizza_img[$j] . check_pizza_name($pizza_img[$j])  . "
                 class='selection' type='radio'>";
             $j++;
-            echo $j;
+            // echo $j;
 
             return $radio_btn;
        }
