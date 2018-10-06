@@ -2,9 +2,11 @@ nav {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100px;
+    height: 80px;
     width: 100%;
-    background-color: orange;
+    border: 1px solid rgb(179, 179, 179);
+    background-color: rgb(241, 241, 241);
+    /* padding: 40px; */
 }
 
 .my-head-space {
@@ -16,5 +18,11 @@ nav {
     top: 50px;
     right: 5%;
     font-size: 2rem;
+}
 
+.nav_left-links {
+    position: absolute;
+    top: 50px;
+    left: 5%;
+    font-size: 2rem;
 }

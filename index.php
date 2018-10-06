@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Pipi's Pizzeria</title>
+    <title>Peep's Pizzeria</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="views/assets/css/base.css" />    -->
     <link rel="stylesheet" href="views/assets/css/main.css" <?php  echo time(); ?> />   
@@ -20,7 +20,10 @@
 
 <nav>
     <div class="logo"></div>
-    <h1>PiPi's Cheeky Pizzeria</h1>
+    <h1><em>Peep's Pizzeria</em></h1>
+    <div class="nav_left-links">
+        <a href="/projects/php_pizza_crud/delivery.php">Deliveries</a>
+    </div>
     <div class="nav_links">
         <a href="/projects/php_pizza_crud">Home</a>
         <a href="/projects/php_pizza_crud/orderForm.php">Customize</a>
@@ -29,6 +32,11 @@
 
 
 <div class="my-head-space"></div>
+    <div class="center marg-bottom padding">
+        <div class="table_header">
+            <h2>Peep's Specials</h2>
+        </div>
+    </div> 
 
 <div class="pretty-pizza">
     <?php  
@@ -55,10 +63,18 @@
        'views/assets/img/hawPizza.jpg', 'views/assets/img/supremePizza.jpg',
        'views/assets/img/pizzat.jpg', 'views/assets/img/mushroomPizza.jpg'  
         );
-       $submit_btn = '<input class="submit-btn" type="Submit" value="Result" name="Submit">';
+       $submit_btn = '<div class="center"><input class="submit-btn" 
+                      type="Submit" value="GIMME" name="Submit"></div>';
        $selected='';
        $radio_select='';
        $j=0;
+       $page_header = ' 
+        <div class="center">
+            <div class="table_header">
+                <h3><em>#LovesIt</em></h3>
+            </div>
+        </div> ';
+        echo $page_header;
 
        function check_pizza_name($j) {
         // echo $j;
@@ -111,15 +127,18 @@
         </select>
        $submit_btn 
         </form>" ;
+        
+
        
-       echo "<table class='all_current_orders'>";
+       echo "<form action='' method='POST'><table class='all_current_orders'>";
        echo "<tr><th></th><th>PIZZA</th><th>TOPPINGS</th> </tr>";
        while($row = mysql_fetch_assoc($sqlData)) {
        
-           echo "<form action='' method='POST'><tr><td>" . radio_btn_mkr() . "</td><td>" . $row["pizza_name"] . "</td><td>" . $row["toppings"]
-           . "</td></tr></form>";
+           echo "<tr><td>" . radio_btn_mkr() . "</td><td>" 
+           . $row["pizza_name"] . "</td><td class='table_toppings'>" . $row["toppings"]
+           . "</td></tr>";
        }
-       echo "</table>";
+       echo "</table></form>";
 
        echo $sizeDropdown;
         
@@ -128,7 +147,6 @@
 </div>
 
 <div class="my-head-space"></div>
-<input type="checkbox">
 
 
     <div class="container">
@@ -138,19 +156,3 @@
 </body>
 </html>
 
-<?php
-$Connection=mysql_connect('localhost', 'root', '');
-$Selected=mysql_select_db('pizzahouse', $Connection);
-
-$sqlGet = "SELECT * FROM orders";
-$sqlData = mysql_query($sqlGet);
-
-echo "<table class='all_current_orders'>";
-echo "<tr><th>ORDER #</th> <th>CUSTOMER</th><th>PIZZA NAME</th> <th>TOPPINGS</th><th>PRICE</th></tr>";
-while($row = mysql_fetch_assoc($sqlData)) {
-    echo "<tr><td>" . $row["id"] . "</td><td>" . $row["customer"] . "</td><td>" . 
-    $row["pizza_name"] . "</td><td>" . $row["toppings"] . "</td><td>" . $row["price"] . 
-    "</td></tr>";
-}
-echo "</table>";
-?>
