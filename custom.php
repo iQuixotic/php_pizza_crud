@@ -76,19 +76,21 @@
 
 <nav>
     <div class="logo"></div>
-    <h1>Pizza Time !</h1>
+    <h1><em>Peep's Pizzeria</em></h1>
+    <div class="nav_left-links">
+        <a href="/projects/php_pizza_crud/delivery.php">Deliveries</a>
+    </div>
     <div class="nav_links">
         <a href="/projects/php_pizza_crud">Home</a>
-        <a href="/projects/php_pizza_crud/orderForm.php">Customize</a>
+        <a class='active' href="/projects/php_pizza_crud/custom.php">Customize</a>
     </div>
 </nav>
 
 <div class="my-head-space"></div>
 
     <div class="container">
-    <form method="POST" action="orderForm.php">
-    <div class="form-header">Pizza Name:</div>  <br> <input type="text" Name="pizzaName" value=""><br>
-    <div class="form-header">Customer:</div><br>  <input type="text" Name="customer" value=""><br>
+    <form method="POST" action="custom.php">
+    <div class="form-header">Name: </div><br>  <input type="text" Name="customer" value=""><br>
     <!-- <div class="form-header">toppings:</div>  <br> <input type="text" Name="toppings" value=""><br> -->
     
     <div class="form-header">Size: </div> <br>

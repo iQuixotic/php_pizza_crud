@@ -10,7 +10,7 @@ nav {
 }
 
 .my-head-space {
-    margin-top: 150px;
+    margin-top: 120px;
 }
 
 .nav_links {
@@ -18,11 +18,41 @@ nav {
     top: 50px;
     right: 5%;
     font-size: 2rem;
+    display: flex;
 }
 
 .nav_left-links {
     position: absolute;
+    padding-bottom: 10px !important;
     top: 50px;
     left: 5%;
     font-size: 2rem;
+}
+
+.nav_links a,
+.nav_left-links a {
+    color: rgb(110, 110, 110);
+    font-weight: 600;
+    border-right: 1px solid rgb(182, 182, 182);
+    padding: 5px 25px !important;
+}
+
+.nav_left-links a {
+    padding-bottom: 7px !important;
+}
+
+.nav_left-links a,
+.nav_links a:nth-child(odd) {
+    padding: 5px;
+    border-left: 1px solid rgb(182, 182, 182);
+}
+
+.nav_links a:hover,
+.nav_left-links a:hover,
+.active { 
+    font-weight: 700;
+    background-color: rgb(231, 231, 231);
+    /* color: white; */
+    /* background-color: rgb(255, 187, 0); */
+    border-bottom: 2px solid red;
 }

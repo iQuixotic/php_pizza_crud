@@ -1,12 +1,10 @@
 .pretty-pizza {
-    width: 60%;
+    width: 100%;
     display: flex;
 }
 
 .choice-form {
-    display: inline-block;
     width: 600px;
-    /* overflow: hidden; */
     padding: 8px;
     margin: 0 10px;
     border: 1px solid rgb(218, 218, 255);
@@ -14,7 +12,7 @@
 }
 
 .pretty-pizza img {
-    width: 100%;
+    width: 60%;
     height: 40rem;
 }
 

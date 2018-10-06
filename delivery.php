@@ -22,11 +22,11 @@
     <div class="logo"></div>
     <h1><em>Peep's Pizzeria</em></h1>
     <div class="nav_left-links">
-        <a href="/projects/php_pizza_crud/delivery.php">Deliveries</a>
+        <a class='active' href="/projects/php_pizza_crud/delivery.php">Deliveries</a>
     </div>
     <div class="nav_links">
         <a href="/projects/php_pizza_crud">Home</a>
-        <a href="/projects/php_pizza_crud/orderForm.php">Customize</a>
+        <a href="/projects/php_pizza_crud/custom.php">Customize</a>
     </div>
 </nav>
 

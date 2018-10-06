@@ -25,8 +25,8 @@
         <a href="/projects/php_pizza_crud/delivery.php">Deliveries</a>
     </div>
     <div class="nav_links">
-        <a href="/projects/php_pizza_crud">Home</a>
-        <a href="/projects/php_pizza_crud/orderForm.php">Customize</a>
+        <a class='active' href="/projects/php_pizza_crud">Home</a>
+        <a href="/projects/php_pizza_crud/custom.php">Customize</a>
     </div>
 </nav>
 
@@ -116,15 +116,16 @@
         }
         return $options;
         }
-        if (isset( $_POST["sizes"])) {
-            echo $_POST["sizes"];
-            echo $price+$_POST["sizes"];
-        }
 
+        $new_price='';
+        if (isset( $_POST["sizes"])) {
+            $new_price = $price+$_POST["sizes"];
+        }
          $sizeDropdown = "<form action='' method='POST'>
         <select name='sizes'>
         ". get_options($selected) . "
         </select>
+        <h3 class='price'>$new_price</h3>
        $submit_btn 
         </form>" ;
         
@@ -141,6 +142,8 @@
        echo "</table></form>";
 
        echo $sizeDropdown;
+       
+      
         
         ?>
     </div>
