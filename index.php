@@ -1,4 +1,7 @@
-
+<?php 
+    include 'connection.php';
+    include 'formSubmit.php';
+?>
 
 <!DOCTYPE html>
 <html>
@@ -14,7 +17,6 @@
     <link rel="stylesheet" href="views/assets/css/tables.css"  <?php  echo time(); ?> />   
     <link rel="stylesheet" href="views/assets/css/nav.css"  <?php  echo time(); ?> />   
 
-
 </head>
 <body>
 
@@ -22,14 +24,13 @@
     <div class="logo"></div>
     <h1><em>Peep's Pizzeria</em></h1>
     <div class="nav_left-links">
-        <a href="/projects/php_pizza_crud/delivery.php">Deliveries</a>
+        <a href="/php/projects/php_pizza_crud/php/delivery.php">Deliveries</a>
     </div>
     <div class="nav_links">
         <a class='active' href="/projects/php_pizza_crud">Home</a>
-        <a href="/projects/php_pizza_crud/custom.php">Customize</a>
+        <a href="/projects/php_pizza_crud/php/custom.php">Customize</a>
     </div>
 </nav>
-
 
 <div class="my-head-space"></div>
     <div class="center marg-bottom padding">
