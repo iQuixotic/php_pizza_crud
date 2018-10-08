@@ -1,19 +1,36 @@
 <?php 
-
+// $_SERVER[projects]
 include 'connection.php';
+include 'custom.php';
+include 'delivery.php';
+include 'index.php';
 
-
-$price=5;
-$pizzaName=$_POST["pizzaName"];
+// $pizzaName=$_POST["pizzaName"];
 $size=$_POST["size"];
-$customer=$_POST["customer"];
+$customer= isset($_POST["customer"]) ? $_POST["customer"] : '';
 $toppings='';
 $toppingsArr=array();
 
-$Query="INSERT INTO orders(pizza_name, customer, size, toppings, price) 
-VALUES('$pizzaName',  '$customer', '$size', '$toppings', '$price')";
+switch ($size) {
+    case 'MED':
+        priceAdjust(2.09);
+        break;
+    case 'LG':
+        priceAdjust(3.59);
+        break;
+    case 'XL':
+        priceAdjust(4.99);
+        break;
+    
+    default:
+        # code...
+        break;
+}
+
+$Query="INSERT INTO orders(customer, size, toppings, price) 
+VALUES('$customer', '$size', '$toppings', '$price')";
 $Execute=mysql_query($Query);
-echo $pizzaName .  $customer . $size . $toppings . $price;
+echo $customer . $size . $toppings . $price;
 
 
 ?>

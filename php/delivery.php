@@ -1,6 +1,5 @@
 <?php 
 include 'connection.php';
-include 'formSubmit.php';
 ?>
 <!DOCTYPE html>
 <html>

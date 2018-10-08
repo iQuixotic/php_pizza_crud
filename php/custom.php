@@ -1,6 +1,5 @@
 <?php 
     include 'connection.php';
-    include 'formSubmit.php';
 ?>
 <?php 
     
@@ -23,21 +22,10 @@
                 // echo $glass;
             }
         $SM_val=4.00;
-        switch ($size) {
-            case 'MED':
-                priceAdjust(2.09);
-                break;
-            case 'LG':
-                priceAdjust(3.59);
-                break;
-            case 'XL':
-                priceAdjust(4.99);
-                break;
-            
-            default:
-                # code...
-                break;
-        }
+       
+
+        
+        $price=5;
         
         foreach ($PrepArr as $elem) {
             if($elem !== "NA") {
@@ -83,7 +71,7 @@
 <div class="my-head-space"></div>
 
     <div class="container">
-    <form method="POST" action="custom.php">
+    <form method="POST" action="formSubmit.php">
     <div class="form-header">Name: </div><br>  <input type="text" Name="customer" value=""><br>
     <!-- <div class="form-header">toppings:</div>  <br> <input type="text" Name="toppings" value=""><br> -->
     

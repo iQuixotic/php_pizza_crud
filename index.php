@@ -1,6 +1,5 @@
 <?php 
-    include 'connection.php';
-    include 'formSubmit.php';
+    include './php/connection.php';
 ?>
 
 <!DOCTYPE html>
