@@ -51,6 +51,8 @@ $sqlGet = "SELECT * FROM orders";
 $sqlData = mysql_query($sqlGet);
 
 echo "<table class='all_current_orders'>";
+echo "<col width='15%'/> <col width='15%'/> <col width='15%'/> 
+<col width='40%'/> <col width='15%'/>";
 echo "<tr><th>ORDER #</th> <th>CUSTOMER</th><th>SIZE</th> <th>TOPPINGS</th><th>PRICE</th></tr>";
 while($row = mysql_fetch_assoc($sqlData)) {
     echo "<tr><td>" . $row["id"] . "</td><td>" . $row["customer"] . "</td><td>" . 

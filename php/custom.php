@@ -1,45 +1,7 @@
 <?php 
     include 'connection.php';
+    include 'formInputs.php';
 ?>
-<?php 
-    
-    if(isset($_POST["Submit"])) {
-        
-        $PrepArr=array(
-            $_POST["mushroom"], $_POST["peps"], $_POST["green_pepper"], $_POST["red_pepper"], 
-            $_POST["ham"], $_POST["mozzarella"], $_POST["olive"], $_POST["onion"],
-            $_POST["pineapple"], $_POST["provolone"], $_POST["spinach"], $_POST["tomato"]);
-
-            function priceAdjust($arg) {
-                global $price;
-                $glass=$price+$arg;
-                $price=$glass;
-
-                print_r($price);
-                print_r($glass);
-
-                
-                // echo $glass;
-            }
-        $SM_val=4.00;
-       
-
-        
-        $price=5;
-        
-        foreach ($PrepArr as $elem) {
-            if($elem !== "NA") {
-                $toppingsArr[]=$elem;                
-                $price=$price+.4;
-                $toppings= implode(", ", $toppingsArr);
-            } 
-        }
-
-    }
-    // for ($i = 0; $i <= 10; $i++) {
-    //     echo "The number is: $i <br>";
-
-    ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,7 +9,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Jimmy Johns</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="views/assets/css/base.css" />    -->
     <link rel="stylesheet" href="../views/assets/css/base.css" <?php  echo time(); ?> />   
     <link rel="stylesheet" href="../views/assets/css/layout.css"  <?php  echo time(); ?> />   
     <link rel="stylesheet" href="../views/assets/css/nav.css"  <?php  echo time(); ?> />   
@@ -76,12 +37,8 @@
     <!-- <div class="form-header">toppings:</div>  <br> <input type="text" Name="toppings" value=""><br> -->
     
     <div class="form-header">Size: </div> <br>
-    <select name="size" class="pizza_size">
-        <option value="SM">SM</option>
-        <option value="MED">MED</option>
-        <option value="L">L</option>
-        <option value="XL">XL</option>
-    </select>
+    <?php 
+    echo $price_visibility_form; ?>
 
     <div id="toppings">
         <div class="toppings_single">
@@ -211,9 +168,6 @@
 
     </div>
     
-
-    
-    <!-- <div class="form-header">Price:</div>  <br> <input type="text" Name="price" value=""><br> -->
     </form>
     </div>
     

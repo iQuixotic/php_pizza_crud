@@ -1,5 +1,7 @@
 .all_current_orders {
-    font-size: 2rem;
+    width: 100%;
+    table-layout: fixed;
+    font-size: 1.8rem;
     padding: 5px;
     overflow: hidden;
     border-radius: 35px;
@@ -19,11 +21,9 @@ tr:nth-child(even) {
 }
 
 .selection {
-    width: 18px;
-    height: 18px;
-    margin: 0;
-    padding: 0;
-    background-color: rgb(94, 75, 75);
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 5px;
 }
 
 .table_header {
