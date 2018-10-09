@@ -11,7 +11,7 @@ $size_dropdown = "
 </select>";
 
 $price_visibility_form = "
-    <form action='' method='POST'>
+    <form action='switchPrice.php' method='POST'>
         $size_dropdown
     </form>";
 

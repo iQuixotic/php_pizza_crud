@@ -1,9 +1,9 @@
 <?php 
 // $_SERVER[projects]
 include 'connection.php';
-include 'custom.php';
-include 'delivery.php';
-include 'index.php';
+// include 'custom.php';
+// include 'delivery.php';
+// include 'index.php';
 
 $customer= isset($_POST["customer"]) ? $_POST["customer"] : '';
 $toppings='';
@@ -28,7 +28,7 @@ if(isset($_POST["Submit"])) {
 }
 
 
-
+global $price, $size;
 $Query="INSERT INTO orders(customer, size, toppings, price) 
 VALUES('$customer', '$size', '$toppings', '$price')";
 $Execute=mysql_query($Query);

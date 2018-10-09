@@ -76,11 +76,11 @@
     </div> ';
     echo $page_header;
 
+    // all functions start here
    function check_pizza_name($j) {
-
-   if (isset($_POST["pizza_name"]) && $_POST["pizza_name"] == $j) {
-    return " checked=checked ";
-   } 
+            if (isset($_POST["pizza_name"]) && $_POST["pizza_name"] == $j) {
+            return " checked=checked ";
+        } 
    }
 
    function radio_btn_mkr() {

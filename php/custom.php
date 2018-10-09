@@ -32,13 +32,13 @@
 <div class="my-head-space"></div>
 
     <div class="container">
-    <form method="POST" action="formSubmit.php">
+    <form method="POST" >
     <div class="form-header">Name: </div><br>  <input type="text" Name="customer" value=""><br>
     <!-- <div class="form-header">toppings:</div>  <br> <input type="text" Name="toppings" value=""><br> -->
     
     <div class="form-header">Size: </div> <br>
     <?php 
-    echo $price_visibility_form; ?>
+    echo $size_dropdown; ?>
 
     <div id="toppings">
         <div class="toppings_single">

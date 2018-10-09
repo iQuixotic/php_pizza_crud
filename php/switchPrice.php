@@ -23,10 +23,6 @@ if (isset($_POST["$size"])) {
 }
 
 
-// $SM_val=4.00;
-
-// $size=$_POST["size"];
-
 function priceAdjust($arg) {
     global $price;
     $glass=$price+$arg;
