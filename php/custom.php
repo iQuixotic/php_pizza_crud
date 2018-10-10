@@ -2,6 +2,8 @@
     include 'connection.php';
     include 'formInputs.php';
 include 'switchPrice.php';
+include 'formSubmit.php';
+
 
 ?>
 <!DOCTYPE html>
