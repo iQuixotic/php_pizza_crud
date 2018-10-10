@@ -90,7 +90,6 @@
             value=". $pizza_img[$j] . check_pizza_name($pizza_img[$j])  . "
             class='selection' type='radio'>";
         $j++;
-
         return $radio_btn;
    }  
 
