@@ -21,7 +21,7 @@ include 'formSubmit.php';
 </head>
 <body>
 
-<!-- <nav>
+<nav>
     <div class="logo"></div>
     <h1><em>Peep's Pizzeria</em></h1>
     <div class="nav_left-links">
@@ -31,7 +31,7 @@ include 'formSubmit.php';
         <a href="/projects/php_pizza_crud">Home</a>
         <a class='active' href="/projects/php_pizza_crud/php/custom.php">Customize</a>
     </div>
-</nav> -->
+</nav>
 
 <div class="my-head-space"></div>
 

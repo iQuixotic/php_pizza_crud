@@ -1,6 +1,9 @@
 <?php 
     include './php/connection.php';
     include './php/formInputs.php';
+    include './php/switchPrice.php';
+    include './php/formSubmit.php';
+
 
 ?>
 
@@ -114,16 +117,16 @@
     if (isset( $_POST["sizes"])) {
         $new_price = $price+$_POST["sizes"];
     }
-     $sizeDropdown = "<form action='formSubmit.php' method='POST'>
-    <select name='sizes'>
-    ". get_options($selected) . "
-    </select>
+     $input_area ="
+   $size_dropdown
     <h3 class='price'>$new_price</h3>
-   $submit_btn 
-    </form>" ;    
+   $submit_btn ";  
 
+    // <select name='sizes'>
+    // ". get_options($selected) . "
+    // </select>
    
-   echo "<form action='' method='POST'><table class='all_current_orders'>";
+   echo "<form method='POST'><table class='all_current_orders'>";
    echo "<col width='5%'/><col width='35%'/><col width='55%'/>";
    echo "<tr><th></th><th>PIZZA</th><th>TOPPINGS</th> </tr>";
    while($row = mysql_fetch_assoc($sqlData)) {
@@ -134,7 +137,7 @@
    }
    echo "</table></form>";
 
-   echo $sizeDropdown;
+   echo $input_area;
    
   
     
