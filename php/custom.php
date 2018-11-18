@@ -41,8 +41,13 @@ include 'formSubmit.php';
     <!-- <div class="form-header">toppings:</div>  <br> <input type="text" Name="toppings" value=""><br> -->
     
     <div class="form-header">Size: </div> <br>
-    <?php 
-    echo $size_dropdown; ?>
+    <select name='size' class='pizza_size'>
+        <option value='SM'></option>
+        <option value='SM'>SM</option>
+        <option value='MED'>MED</option>
+        <option value='LG'>L</option>
+        <option value='XL'>XL</option>
+    </select>
 
     <div id="toppings">
         <div class="toppings_single">
