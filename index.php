@@ -45,6 +45,8 @@
 
 <div class="pretty-pizza">
     <?php  
+    
+    $price_by_size = 0;
             if (isset( $_POST["pizza_name"])) {
             echo "<br>";
             $src= $_POST["pizza_name"];
@@ -61,10 +63,10 @@
    $sqlGet = "SELECT * FROM menu";
    $sqlData = mysql_query($sqlGet);
 
-   $price=3.5;
-   $pizza_img = array('views/assets/img/pepperoniPizza.jpg', 
-   'views/assets/img/hawPizza.jpg', 'views/assets/img/supremePizza.jpg',
-   'views/assets/img/pizzat.jpg', 'views/assets/img/mushroomPizza.jpg'  
+//    $price=3.5;
+   $pizza_img = array(0 => 'views/assets/img/pepperoniPizza.jpg', 
+   1 => 'views/assets/img/hawPizza.jpg', 2 => 'views/assets/img/supremePizza.jpg',
+   3 => 'views/assets/img/pizzat.jpg', 4 => 'views/assets/img/mushroomPizza.jpg'  
     );
    $submit_btn = '<div class="center"><input class="submit-btn" 
                   type="Submit" value="GIMME" name="Submit"></div>';
@@ -78,10 +80,18 @@
         </div>
     </div> ';
     echo $page_header;
+    
 
     // all functions start here
    function check_pizza_name($j) {
+    //    global $price_by_size;
+    //    $price_by_size = 2;
+       global $pizza_img;
             if (isset($_POST["pizza_name"]) && $_POST["pizza_name"] == $j) {
+       global $price_by_size;
+                
+            $price_by_size = array_search ( $j ,$pizza_img );
+            echo 'this is j ' . $price_by_size;
             return " checked=checked ";
         } 
    }
@@ -100,26 +110,27 @@
         echo "<img src='./$src'>";
    }
 
-   function get_options($selected) {
-    $sizes=array('SM'=>1, 'MED'=>2, 'LG'=>3, 'XL'=>4);
-    $options='';
-    while(list($k,$v)=each($sizes)) {
-        if($selected==$v) {
-            $options .= '<option value="' . $v . '" selected>' . $k .'</option>';
-        } else {
-            $options.='<option value="' . $v . '">' . $k .'</option>';                
-        }
-    }
-    return $options;
-    }
+//    function get_options($selected) {
+//     $sizes=array('SM'=>1, 'MED'=>2, 'LG'=>3, 'XL'=>4);
+//     $options='';
+//     while(list($k,$v)=each($sizes)) {
+//         if($selected==$v) {
+//             $options .= '<option value="' . $v . '" selected>' . $k .'</option>';
+//         } else {
+//             $options.='<option value="' . $v . '">' . $k .'</option>';                
+//         }
+//     }
+//     return $options;
+//     }
 
-    $new_price='';
-    if (isset( $_POST["sizes"])) {
-        $new_price = $price+$_POST["sizes"];
-    }
+    // $new_price='';
+    // if (isset( $_POST["sizes"])) {
+    //     $new_price = $price+$_POST["sizes"];
+    // }
+    
      $input_area ="
    $size_dropdown
-    <h3 class='price'>$new_price</h3>
+    <h3 class='price'>$price_by_size</h3>
    $submit_btn ";  
 
     // <select name='sizes'>
@@ -135,9 +146,12 @@
        . $row["pizza_name"] . "</td><td class='table_toppings'>" . $row["toppings"]
        . "</td></tr>";
    }
-   echo "</table></form>";
+   echo "</table>";
 
    echo $input_area;
+   echo " is this my price $price_by_size ";
+
+   echo "</form>"
    
   
     
