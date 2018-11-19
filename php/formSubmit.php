@@ -22,7 +22,7 @@ if (isset($_POST["Submit"])) {
 
     } else {
         //  $toppings;
-        $toppings = $specials_toppings[$price_by_size];
+        // $toppings = $specials_toppings[$price_by_size];
         echo $toppings;
         sendTheQuery();
 
