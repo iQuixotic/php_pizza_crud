@@ -18,10 +18,10 @@ return drops;
 </script>
 
 <?php
-$price_visibility_form = "
-    <form action='' method='POST'>
-        $size_dropdown
-    </form>";
+// $price_visibility_form = "
+//     <form action='' method='POST'>
+//         $size_dropdown
+//     </form>";
 
 
 ?>

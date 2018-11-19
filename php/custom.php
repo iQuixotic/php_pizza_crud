@@ -42,7 +42,6 @@ include 'formSubmit.php';
     
     <div class="form-header">Size: </div> <br>
     <select name='size' class='pizza_size'>
-        <option value='SM'></option>
         <option value='SM'>SM</option>
         <option value='MED'>MED</option>
         <option value='LG'>L</option>

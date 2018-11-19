@@ -24,6 +24,7 @@
 </head>
 <body>
 
+
 <nav>
     <div class="logo"></div>
     <h1><em>Peep's Pizzeria</em></h1>
@@ -43,10 +44,12 @@
         </div>
     </div> 
 
+
 <div class="pretty-pizza">
+
     <?php  
     
-    $price_by_size = 0;
+    
             if (isset( $_POST["pizza_name"])) {
             echo "<br>";
             $src= $_POST["pizza_name"];
@@ -58,29 +61,26 @@
     ?>
     <div class="choice-form">
         <!-- <form action="formSubmit.php" class="specials"> -->
+        
     <?php 
    
    $sqlGet = "SELECT * FROM menu";
    $sqlData = mysql_query($sqlGet);
 
+
 //    $price=3.5;
-   $pizza_img = array(0 => 'views/assets/img/pepperoniPizza.jpg', 
-   1 => 'views/assets/img/hawPizza.jpg', 2 => 'views/assets/img/supremePizza.jpg',
-   3 => 'views/assets/img/pizzat.jpg', 4 => 'views/assets/img/mushroomPizza.jpg'  
-    );
-   $submit_btn = '<div class="center"><input class="submit-btn" 
-                  type="Submit" value="GIMME" name="Submit"></div>';
+   
+//    $submit_btn = '<div class="center"><input class="submit-btn" 
+//                   type="Submit" value="GIMME" name="Submit"></div>';
    $selected='';
    $radio_select='';
-   $j=0;
    $page_header = ' 
     <div class="center">
         <div class="table_header">
             <h3><em>#LovesIt</em></h3>
         </div>
     </div> ';
-    echo $page_header;
-    
+    echo $page_header;   
 
     // all functions start here
    function check_pizza_name($j) {
@@ -129,9 +129,7 @@
     // }
     
      $input_area ="
-   $size_dropdown
-    <h3 class='price'>$price_by_size</h3>
-   $submit_btn ";  
+    <h3 class='price'>$price_by_size</h3>";  
 
     // <select name='sizes'>
     // ". get_options($selected) . "
@@ -147,7 +145,22 @@
        . "</td></tr>";
    }
    echo "</table>";
+?>
+<div class="form-header">Size: </div> <br>
+    <select name='size' class='pizza_size'>
+        <option <?php if ( $size==='SM') { echo "selected='selected'"; }  ?> value='SM'>SM</option>
+        <option <?php if ( $size==='MED') { echo "selected='selected'"; }  ?> value='MED'>MED</option>
+        <option <?php if ( $size==='LG') { echo "selected='selected'"; }  ?> value='LG'>L</option>
+        <option <?php if ( $size==='XL') { echo "selected='selected'"; }  ?> value='XL'>XL</option>
+    </select>
 
+<div class="form-header">Name: </div><br>  <input type="text" Name="customer" value=""><br>
+
+<div class="center">
+    <input class="submit-btn" type="Submit" value="GIMME" name="Submit">
+</div>
+
+<?php
    echo $input_area;
    echo " is this my price $price_by_size ";
 
