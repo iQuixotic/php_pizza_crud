@@ -1,6 +1,6 @@
 <?php 
     include './php/connection.php';
-    include './php/formInputs.php';
+    include './php/functionsAndVariables.php';
     include './php/switchPrice.php';
     include './php/formSubmit.php';
 
@@ -67,11 +67,6 @@
    $sqlGet = "SELECT * FROM menu";
    $sqlData = mysql_query($sqlGet);
 
-
-//    $price=3.5;
-   
-//    $submit_btn = '<div class="center"><input class="submit-btn" 
-//                   type="Submit" value="GIMME" name="Submit"></div>';
    $selected='';
    $radio_select='';
    $page_header = ' 
@@ -81,59 +76,6 @@
         </div>
     </div> ';
     echo $page_header;   
-
-    // all functions start here
-   function check_pizza_name($j) {
-    //    global $price_by_size;
-    //    $price_by_size = 2;
-       global $pizza_img;
-            if (isset($_POST["pizza_name"]) && $_POST["pizza_name"] == $j) {
-       global $price_by_size;
-                
-            $price_by_size = array_search ( $j ,$pizza_img );
-            echo 'this is j ' . $price_by_size;
-            return " checked=checked ";
-        } 
-   }
-
-   function radio_btn_mkr() {
-       global $pizza_img;           
-       global $j;
-            $radio_btn = " <input  onclick='form.submit()' name='pizza_name'               
-            value=". $pizza_img[$j] . check_pizza_name($pizza_img[$j])  . "
-            class='selection' type='radio'>";
-        $j++;
-        return $radio_btn;
-   }  
-
-   function get_image($src) {
-        echo "<img src='./$src'>";
-   }
-
-//    function get_options($selected) {
-//     $sizes=array('SM'=>1, 'MED'=>2, 'LG'=>3, 'XL'=>4);
-//     $options='';
-//     while(list($k,$v)=each($sizes)) {
-//         if($selected==$v) {
-//             $options .= '<option value="' . $v . '" selected>' . $k .'</option>';
-//         } else {
-//             $options.='<option value="' . $v . '">' . $k .'</option>';                
-//         }
-//     }
-//     return $options;
-//     }
-
-    // $new_price='';
-    // if (isset( $_POST["sizes"])) {
-    //     $new_price = $price+$_POST["sizes"];
-    // }
-    
-     $input_area ="
-    <h3 class='price'>$price_by_size</h3>";  
-
-    // <select name='sizes'>
-    // ". get_options($selected) . "
-    // </select>
    
    echo "<form method='POST'><table class='all_current_orders'>";
    echo "<col width='5%'/><col width='35%'/><col width='55%'/>";
@@ -161,14 +103,9 @@
 </div>
 
 <?php
-   echo $input_area;
-   echo " is this my price $price_by_size ";
-
-   echo "</form>"
-   
+   echo "</form>";
+   echo 'this is your price ' ?> <span id='chosen-pizza'><?php echo $price_by_size; ?></span>
   
-    
-    ?>
         <!-- </form> -->
        
     </div>
