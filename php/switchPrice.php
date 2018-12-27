@@ -40,12 +40,6 @@ function priceAdjust($arg) {
     $glass=$price+$arg;
     $price=$glass;
 
-    
-    echo "<h1>yo yo yo $size $price</h1>";
-    echo "<h1>yo yo yo $price</h1>";
-    echo "<h1>yo yo yo $price</h1>";
-
-
     print_r($price);
     print_r($glass);
 }

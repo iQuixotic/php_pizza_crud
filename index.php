@@ -49,7 +49,6 @@
 
     <?php  
     
-    
             if (isset( $_POST["pizza_name"])) {
             echo "<br>";
             $src= $_POST["pizza_name"];
@@ -60,7 +59,6 @@
         }
     ?>
     <div class="choice-form">
-        <!-- <form action="formSubmit.php" class="specials"> -->
         
     <?php 
    
@@ -108,13 +106,7 @@
    echo $toppings;
    echo 'this is your price ' ?> <span id='chosen-pizza'><?php echo $price_by_size; ?></span>
   
-        <!-- </form> -->
-       
-
-       <?php 
-
-// include 'connection.php';
-// include 'functionsAndVariables.php';
+    <?php 
 
 if (isset($_POST["Submit"])) {
 
@@ -134,9 +126,7 @@ if (isset($_POST["Submit"])) {
         sendTheQuery();
 
     } else {
-        //  $toppings;
-        // $toppings = $specials_toppings[$price_by_size];
-        echo $toppings;
+        // echo $toppings;
         sendTheQuery();
 
     }
@@ -146,24 +136,15 @@ if (isset($_POST["Submit"])) {
 
 function sendTheQuery() {
     global $price, $size, $customer, $toppings, $price_by_size, $j;
-    echo 'hardhardhhhhhhhhhhhhhhhhhhh ' . $j . $price_by_size;
     $Query="INSERT INTO orders(customer, size, toppings, price) 
     VALUES('$customer', '$size', '$toppings', '$price')";
     $Execute=mysql_query($Query);
-    echo 'THIS IS THE BEGINNING OF THE TOPPINGS ARRAY' . $customer . $size . $toppings . $price;
 }
-
-
 ?>
-
-
-
-
     </div>
 </div>
 
 <div class="my-head-space"></div>
-
 
     <div class="container">
    

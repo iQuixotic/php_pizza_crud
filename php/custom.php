@@ -1,6 +1,7 @@
 <?php 
     include 'connection.php';
     include 'formInputs.php';
+    include 'functionsAndVariables.php';
 include 'switchPrice.php';
 include 'formSubmit.php';
 
@@ -38,7 +39,6 @@ include 'formSubmit.php';
     <div class="container">
     <form method="POST" >
     <div class="form-header">Name: </div><br>  <input type="text" Name="customer" value=""><br>
-    <!-- <div class="form-header">toppings:</div>  <br> <input type="text" Name="toppings" value=""><br> -->
     
     <div class="form-header">Size: </div> <br>
     <select name='size' class='pizza_size'>

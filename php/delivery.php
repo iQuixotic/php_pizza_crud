@@ -8,7 +8,6 @@ include 'connection.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Peep's Pizzeria</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="views/assets/css/base.css" />    -->
     <link rel="stylesheet" href="../views/assets/css/main.css" <?php  echo time(); ?> />   
     <link rel="stylesheet" href="../views/assets/css/base.css" <?php  echo time(); ?> />   
     <link rel="stylesheet" href="../views/assets/css/layout.css"  <?php  echo time(); ?> />  
@@ -33,7 +32,6 @@ include 'connection.php';
 
 <div class="my-head-space"></div>
 
-    
 </body>
 </html>
 
@@ -45,8 +43,6 @@ include 'connection.php';
    </div> 
 <?php
 
-
-
 $sqlGet = "SELECT * FROM orders";
 $sqlData = mysql_query($sqlGet);
 
@@ -55,8 +51,9 @@ echo "<col width='15%'/> <col width='15%'/> <col width='15%'/>
 <col width='40%'/> <col width='15%'/>";
 echo "<tr><th>ORDER #</th> <th>CUSTOMER</th><th>SIZE</th> <th>TOPPINGS</th><th>PRICE</th></tr>";
 while($row = mysql_fetch_assoc($sqlData)) {
-    echo "<tr><td>" . $row["id"] . "</td><td>" . $row["customer"] . "</td><td>" . 
-    $row["size"] . "</td><td>" . $row["toppings"] . "</td><td>" . $row["price"] . 
+    echo "<tr><td>" . $row["id"] . "</td><td class='overflow'>";
+    if( $row["customer"] === '') { echo 'UNKNOWN DESTINATION'; } else { echo $row["customer"]; };
+    echo "</td><td>" . $row["size"] . "</td><td>" . $row["toppings"] . "</td><td>" . $row["price"] . 
     "</td></tr>";
 }
 echo "</table>";

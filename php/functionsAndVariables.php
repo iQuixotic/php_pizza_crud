@@ -1,5 +1,6 @@
 <?php
 
+// global variable deffinitions and arrays
 $price_by_size = 0;
 $j=0;
 $customer= isset($_POST["customer"]) ? $_POST["customer"] : '';
@@ -15,40 +16,15 @@ $specials_toppings = array(0 => 'pepperoni, sam',
     if (isset($_POST["pizza_name"]) && $_POST["pizza_name"] == $j) {
         global $price_by_size, $j;
         $price_by_size = array_search ( $j ,$pizza_img );
-        // $toppings = $specials_toppings[$price_by_size];
 }
-// if (isset($_POST["pizza_name"]) && $_POST["pizza_name"] == $j) {
-//     global $price_by_size;
-//     echo 'hello down there';
-//     echo 'hello down there';
-//     echo 'hello down there';
-//     echo 'hello down there';
-//     echo 'hello down there';
-//     echo 'hello down there';
-//     echo 'hello down there';
-//     echo 'hello down there';
-//     echo 'hello down there';
-//     echo 'hello down there';
-
-             
-//          $price_by_size = array_search ( $j ,$pizza_img );
-//          echo $price_by_size;
-// }
-
 
 // all functions start here
 function check_pizza_name() {
     global $j, $price_by_size, $toppings, 
     $specials_toppings, $pizza_img;
-    // global $price_by_size;
-    // global $pizza_img;
     if (isset($_POST["pizza_name"]) && $_POST["pizza_name"] == $pizza_img[$j]) {
-    // global $price_by_size;    
 
     $price_by_size = array_search ( $pizza_img[$j] ,$pizza_img );
-    // global $price_by_size;
-    // global $specials_toppings;
-    // global $toppings;
 
     $toppings = $specials_toppings[$price_by_size];
          echo 'this is j ' . $price_by_size;
@@ -70,15 +46,5 @@ function radio_btn_mkr() {
 function get_image($src) {
      echo "<img src='./$src'>";
 }
-
-?>
-
-
-<?php
-// $price_visibility_form = "
-//     <form action='' method='POST'>
-//         $size_dropdown
-//     </form>";
-
 
 ?>
