@@ -16,3 +16,22 @@
     height: 40rem;
 }
 
+@media only screen and (max-width: 550px) {
+
+    .pretty-pizza {
+        display: block;
+    }
+
+    .pretty-pizza img {
+        width: 100%;
+        height: 100%;
+    }
+    
+
+    .choice-form {
+        display: block;
+        width: 95%;
+        margin: 0;
+    }
+    
+} 

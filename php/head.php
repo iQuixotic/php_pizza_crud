@@ -23,7 +23,7 @@
             <a  href="/projects/php_pizza_crud/php/delivery.php" class=<?php echo $_SERVER['REQUEST_URI'] == "/projects/php_pizza_crud/php/delivery.php" ? 'active' : ''; ?>>Deliveries</a>
         </div>
         <div class="nav_links">
-            <a href="/projects/php_pizza_crud" class=<?php $_SERVER['REQUEST_URI'] == "/projects/php_pizza_crud" ? 'active' : ''; ?> 
+            <a href="/projects/php_pizza_crud" class=<?php echo $_SERVER['REQUEST_URI'] == "/projects/php_pizza_crud/" ? 'active' : ''; ?> 
             >Home</a>
             <a href="/projects/php_pizza_crud/php/custom.php" class=<?php echo $_SERVER['REQUEST_URI'] == "/projects/php_pizza_crud/php/custom.php" ? 'active' : ''; ?> >Customize</a>
         </div>

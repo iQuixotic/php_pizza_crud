@@ -22,16 +22,18 @@
 
 <nav>
     <div class="logo"></div>
-    <h1><em>Peep's Pizzeria</em></h1>
-    <div class="nav_left-links">
-        <a href="/projects/php_pizza_crud/php/delivery.php">Deliveries</a>
-    </div>
-    <div class="nav_links">
-        <a class='active' href="/projects/php_pizza_crud">Home</a>
-        <a href="/projects/php_pizza_crud/php/custom.php">Customize</a>
+    <h1 class="peeps"><em>Peep's Pizzeria</em></h1>
+    <div class="nav_links-all">
+        <div class="nav_left-links">
+            <a  href="/projects/php_pizza_crud/php/delivery.php" class=<?php echo $_SERVER['REQUEST_URI'] == "/projects/php_pizza_crud/php/delivery.php" ? 'active' : ''; ?>>Deliveries</a>
+        </div>
+        <div class="nav_links">
+            <a href="/projects/php_pizza_crud" class=<?php echo $_SERVER['REQUEST_URI'] == "/projects/php_pizza_crud/" ? 'active' : ''; ?> 
+            >Home</a>
+            <a href="/projects/php_pizza_crud/php/custom.php" class=<?php echo $_SERVER['REQUEST_URI'] == "/projects/php_pizza_crud/php/custom.php" ? 'active' : ''; ?> >Customize</a>
+        </div>
     </div>
 </nav>
-   
 
 <div class="my-head-space"></div>
     <div class="center marg-bottom padding">
@@ -101,8 +103,11 @@
 <?php
    echo "</form>";
    $toppings = $specials_toppings[$price_by_size];
-   echo $toppings;
-   echo 'this is your price ' ?> <span id='chosen-pizza'><?php echo $price_by_size; ?></span>
+//    echo $toppings;
+//    echo 'this is your price ' ?>
+ <!-- <span id='chosen-pizza'>
+    <?php  
+//  echo $price_by_size; ?></span>
   
     <?php 
 

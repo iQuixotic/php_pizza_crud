@@ -60,57 +60,75 @@ nav {
 
     nav {
         border: none;
+        position: fixed;
     }
+
     .peeps {
         display: block;
         border-bottom: none;
-        /* background: blue; */
     }
 
     .nav_left-links a,
     .nav_links a,
     .nav_links a:nth-child(odd) {
+        text-align: center;
+        
+        color: black;
+        width: 25%;
         border: none;
     }
 
     .nav_links-all {
+        font-size: 3rem !important;
         width: 100%;
         display: flex;
     }
 
-    .nav_links-all .nav_left-links a:nth-child(1) {
+    .nav_links-all .nav_left-links a {
+        
+        font-size: 2rem !important;
+        text-align: center;
+        background-color: rgb(252, 252, 252);
+        height: 23px;
         position: fixed;
         left: 0;
-        }
+    }
 
     .nav_links-all .nav_links a:nth-child(1) {
+        font-size: 2rem !important;
+        background-color: rgb(252, 252, 252);
+        height: 25px;
+
         position: fixed;
         left: 33%;
     }
 
     .nav_links-all .nav_links a:nth-child(2) {
+        font-size: 2rem !important;
+        background-color: rgb(252, 252, 252);
+        height: 25px;
+
         position: fixed;
         left: 66%;
     }
 
     .nav_links, 
     .nav_left-links {
-        width: 30%;
-        /* display: flex; */
-        position: absolute;
-        top: 78px;
-
+        text-align: center;
+        top: 80px;
     }
 
-    /* .nav_links a {
-        background-color: rgb(43, 7, 35);
-        left: 0;
-        width: 33%;
-    } */
+    .active, 
+    .nav_links a:hover,
+    .nav_left-links a:hover,
+    .nav_links a:nth-child(1) {
+        background-color: transparent;
+       
+        font-weight: bolder;
+        border-bottom: none;
+    }
+    .active {
+        background-color: rgb(241, 241, 241) !important;
+    }
 
-    /* .nav_links a,
-    .nav_links a:nth-child(odd) {
-        border-left: 1px solid brown;
-        width: 100%; */
-    /* } */
 } 
