@@ -52,14 +52,33 @@ nav {
 .active { 
     font-weight: 700;
     background-color: rgb(231, 231, 231);
-    /* color: white; */
-    /* background-color: rgb(255, 187, 0); */
     border-bottom: 2px solid red;
 }
 
 
 @media only screen and (max-width: 550px) {
 
+    .peeps {
+        background: blue;
+    }
+
+    .nav_links-all {
+        display: block;
+        position: relative;
+        bottom: 80px;
+        color: rgb(128, 0, 79);
+    }
     
+    .nav_links,
+    .nav_left-links {
+        right: 0;
+        left: 0;
+    }
     
+    .nav_links-all a {
+        /* position: relative; */
+        width: 33%;
+        left: 0; 
+        right: 0;
+    }
 } 

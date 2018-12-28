@@ -1,38 +1,14 @@
 <?php 
     include 'connection.php';
-    include 'formInputs.php';
+    // include 'formInputs.php';
     include 'functionsAndVariables.php';
 include 'switchPrice.php';
 include 'formSubmit.php';
 
 
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Jimmy Johns</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../views/assets/css/base.css" <?php  echo time(); ?> />   
-    <link rel="stylesheet" href="../views/assets/css/layout.css"  <?php  echo time(); ?> />   
-    <link rel="stylesheet" href="../views/assets/css/nav.css"  <?php  echo time(); ?> />   
 
-
-</head>
-<body>
-
-<nav>
-    <div class="logo"></div>
-    <h1><em>Peep's Pizzeria</em></h1>
-    <div class="nav_left-links">
-        <a href="/projects/php_pizza_crud/php/delivery.php">Deliveries</a>
-    </div>
-    <div class="nav_links">
-        <a href="/projects/php_pizza_crud">Home</a>
-        <a class='active' href="/projects/php_pizza_crud/php/custom.php">Customize</a>
-    </div>
-</nav>
+<?php include 'head.php'; ?>
 
 <div class="my-head-space"></div>
 

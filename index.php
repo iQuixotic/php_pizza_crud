@@ -2,12 +2,8 @@
     include './php/connection.php';
     include './php/functionsAndVariables.php';
     include './php/switchPrice.php';
-    // include './php/formSubmit.php';
-
-
 ?>
-
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -15,15 +11,14 @@
     <title>Peep's Pizzeria</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="views/assets/css/base.css" />    -->
-    <link rel="stylesheet" href="views/assets/css/main.css" <?php  echo time(); ?> />   
     <link rel="stylesheet" href="views/assets/css/base.css" <?php  echo time(); ?> />   
+    <link rel="stylesheet" href="views/assets/css/main.css" <?php  echo time(); ?> />   
     <link rel="stylesheet" href="views/assets/css/layout.css"  <?php  echo time(); ?> />  
     <link rel="stylesheet" href="views/assets/css/tables.css"  <?php  echo time(); ?> />   
     <link rel="stylesheet" href="views/assets/css/nav.css"  <?php  echo time(); ?> />   
 
 </head>
 <body>
-
 
 <nav>
     <div class="logo"></div>
@@ -36,6 +31,7 @@
         <a href="/projects/php_pizza_crud/php/custom.php">Customize</a>
     </div>
 </nav>
+   
 
 <div class="my-head-space"></div>
     <div class="center marg-bottom padding">
@@ -44,11 +40,13 @@
         </div>
     </div> 
 
+    <?php echo header('Location: '); ?>
+
 
 <div class="pretty-pizza">
 
     <?php  
-    
+
             if (isset( $_POST["pizza_name"])) {
             echo "<br>";
             $src= $_POST["pizza_name"];
