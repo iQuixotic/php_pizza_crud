@@ -17,8 +17,8 @@
 
 <nav>
     <div class="logo"></div>
-    <h1 class='peeps'><em>Peep's Pizzeria</em></h1>
-    <div class='nav_links-all'>
+    <h1 class="peeps"><em>Peep's Pizzeria</em></h1>
+    <div class="nav_links-all">
         <div class="nav_left-links">
             <a  href="/projects/php_pizza_crud/php/delivery.php" class=<?php echo $_SERVER['REQUEST_URI'] == "/projects/php_pizza_crud/php/delivery.php" ? 'active' : ''; ?>>Deliveries</a>
         </div>

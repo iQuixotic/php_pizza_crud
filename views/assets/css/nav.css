@@ -58,27 +58,59 @@ nav {
 
 @media only screen and (max-width: 550px) {
 
+    nav {
+        border: none;
+    }
     .peeps {
-        background: blue;
+        display: block;
+        border-bottom: none;
+        /* background: blue; */
+    }
+
+    .nav_left-links a,
+    .nav_links a,
+    .nav_links a:nth-child(odd) {
+        border: none;
     }
 
     .nav_links-all {
-        display: block;
-        position: relative;
-        bottom: 80px;
-        color: rgb(128, 0, 79);
+        width: 100%;
+        display: flex;
     }
-    
-    .nav_links,
-    .nav_left-links {
-        right: 0;
+
+    .nav_links-all .nav_left-links a:nth-child(1) {
+        position: fixed;
         left: 0;
+        }
+
+    .nav_links-all .nav_links a:nth-child(1) {
+        position: fixed;
+        left: 33%;
     }
-    
-    .nav_links-all a {
-        /* position: relative; */
+
+    .nav_links-all .nav_links a:nth-child(2) {
+        position: fixed;
+        left: 66%;
+    }
+
+    .nav_links, 
+    .nav_left-links {
+        width: 30%;
+        /* display: flex; */
+        position: absolute;
+        top: 78px;
+
+    }
+
+    /* .nav_links a {
+        background-color: rgb(43, 7, 35);
+        left: 0;
         width: 33%;
-        left: 0; 
-        right: 0;
-    }
+    } */
+
+    /* .nav_links a,
+    .nav_links a:nth-child(odd) {
+        border-left: 1px solid brown;
+        width: 100%; */
+    /* } */
 } 
