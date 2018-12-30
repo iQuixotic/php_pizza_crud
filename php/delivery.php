@@ -4,7 +4,6 @@ include 'connection.php';
 
 <?php include 'head.php'; ?>
 
-
 <div class="my-head-space"></div>
 
 </body>
